@@ -1,5 +1,4 @@
-import "./styles.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   RiHome4Line,
   RiTeamLine,
@@ -12,14 +11,13 @@ import {
 } from "react-icons/ri";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi/";
 import {
-  Sidebar,
   SubMenu,
   Menu,
   MenuItem
-  //useProSidebar
 } from "react-pro-sidebar";
-function Sidebars() {
-  //const { collapseSidebar } = useProSidebar();
+import "../../index.css";
+import SidebarCustom from "../SidebarCustom";
+function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
 
   const [toggled, setToggled] = useState(false);
@@ -27,12 +25,12 @@ function Sidebars() {
   const handleCollapsedChange = () => {
     setCollapsed(!collapsed);
   };
-  const handleToggleSidebar = (value) => {
+  const handleToggleSidebar = (value: boolean) => {
     setToggled(value);
   };
 
   return (
-      <Sidebar
+      <SidebarCustom
         className={`app ${toggled ? "toggled" : ""}`}
         style={{ height: "100vh"}}
         collapsed={collapsed}
@@ -55,7 +53,6 @@ function Sidebars() {
                 <div
                   style={{
                     padding: "9px",
-                    // textTransform: "uppercase",
                     fontWeight: "bold",
                     fontSize: 14,
                     letterSpacing: "1px"
@@ -70,18 +67,18 @@ function Sidebars() {
 
           <Menu>
             <MenuItem icon={<RiHome4Line />}>Dashboard</MenuItem>
-            <SubMenu defaultOpen label={"Professors"} icon={<RiTeamLine />}>
+            <SubMenu  label={"Professors"} icon={<RiTeamLine />}>
               <MenuItem icon={<RiUserFollowLine />}>Active </MenuItem>
               <MenuItem icon={<RiUserUnfollowLine />}>Ex Professors</MenuItem>
               <MenuItem icon={<RiCalendar2Line />}>Probation Period</MenuItem>
             </SubMenu>
-            <SubMenu defaultOpen label={"Records"} icon={<RiFolder2Line />}>
+            <SubMenu label={"Records"} icon={<RiFolder2Line />}>
               <MenuItem icon={<RiStackLine />}>Senior Students</MenuItem>
               <MenuItem icon={<RiPlantLine />}>Junior Students</MenuItem>
             </SubMenu>
           </Menu>
         </main>
-      </Sidebar>
+      </SidebarCustom>
   );
 }
-export default Sidebars;
+export default Sidebar;

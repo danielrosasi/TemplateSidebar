@@ -7,11 +7,11 @@
 }
 
 a:hover {
-  color: #0000ff; /* #0ab4ff */
+  color: #0e4f99; /* #0ab4ff */
   font-size: 1.1rem;
 }
 .menu-anchor:hover {
-  background-color: #cafce1 !important;
+  background-color: #ffffff !important;
   font-weight: bolder;
 }
 
@@ -29,5 +29,7 @@ hr {
 }
 a,
 .fpTHfu {
-  background-color: #72e9a8 !important;
+  background-color: #134c8d !important;
+  color: white;
+  font-weight: bolder;
 }

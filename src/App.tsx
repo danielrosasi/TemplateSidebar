@@ -1,15 +1,19 @@
-import React, { Fragment } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from './layout/Sidebar';
+
+import './App.css';
+
 function App() {
   return (
-    <Fragment style={{position:"absolute"}}>
+    <div className="App" style={{position:"absolute"}}>
       <div style={{display: "flex", flexDirection:"row", minHeight:"100vh"}}>
       <Sidebar/>
       <section>
-        <h1>ola mundo</h1>
+        <h1>Dashboard</h1>
       </section>
       </div>
-    </Fragment>
+      
+    </div>
   );
 }
+
 export default App;
